@@ -11,8 +11,8 @@ interface Item {
 
 @Component({
   selector: 't-json-viewer',
-  templateUrl: './t-json-viewer.component.component.html',
-  styleUrls: ['./t-json-viewer.component.component.css'],
+  templateUrl: './t-json-viewer.component.html',
+  styleUrls: ['./t-json-viewer.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class TJsonViewerComponent implements OnInit {

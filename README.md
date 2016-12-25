@@ -8,7 +8,7 @@ Angular 2 component for objects debug (Collapsible JSON in HTML like in Chrome D
 ## Install
 
 ```
-npm install t-json-viewer
+npm install t-json-viewer --save
 ```
 
 ## Usage

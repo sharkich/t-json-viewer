@@ -1,5 +1,5 @@
 {
-  "name": "vri-advanced",
+  "name": "t-json-viewer",
   "version": "1.0.0",
   "license": "MIT",
   "description": "Angular 2 component for objects debug (Collapsible JSON in HTML like in Chrome DevTools)",

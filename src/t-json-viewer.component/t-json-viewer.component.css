@@ -1,0 +1,110 @@
+.t-json-viewer {
+  font-family: monospace;
+  font-size: 1em;
+  width: 100%;
+  overflow: scroll;
+}
+
+/* Item */
+
+.item {
+  border: 1px solid #fff;
+  padding: 1px;
+  margin: 1px 1px 1px 12px;
+}
+
+.inner-item {
+  margin-left: 12px;
+  transition: transform 0.1s ease-in;
+}
+
+/* Main */
+
+.item__title {
+  white-space: nowrap;
+}
+
+.item__key {
+  color: #4E187C;
+}
+
+.item__dot {
+  color: #999;
+}
+
+.item__value {
+  color: #000;
+}
+
+/* Colors */
+
+.item__type--array .item__value {
+  color: #999;
+}
+
+.item__type--object .item__value {
+  color: #999;
+}
+
+.item__type--string .item__value {
+  color: #FF6B6B;
+}
+
+.item__type--number .item__value {
+  color: #009688;
+}
+
+.item__type--boolean .item__value {
+  color: #494949;
+  background: #FFE66D;
+}
+
+.item__type--date .item__value {
+  color: #05668D;
+}
+
+.item__type--function .item__value {
+  color: #999;
+}
+
+.item__type--null .item__value {
+  color: #fff;
+  background: red;
+}
+
+.item__type--undefined .item__key {
+  color: #999;
+}
+.item__type--undefined .item__value {
+  color: #fff;
+  background: #999;
+}
+
+/* */
+
+.toggler {
+  font-size: .8em;
+  line-height: 1.2em;
+  vertical-align: middle;
+  opacity: .6;
+  position: absolute;
+  margin-left: -12px;
+  margin-top: 3px;
+}
+
+.toggler::after {
+  display: inline-block;
+  content: "►";
+  transition: transform 0.1s ease-in;
+}
+
+.is-opened-true > .item__title > .toggler::after {
+  transform: rotate(90deg);
+}
+
+/* */
+
+.is-object-true > .toggler,
+.is-object-true > .item__title{
+  cursor: pointer;
+}

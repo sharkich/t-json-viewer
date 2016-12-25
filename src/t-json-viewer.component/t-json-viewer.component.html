@@ -1,0 +1,33 @@
+<div class="t-json-viewer">
+
+  <div
+    *ngFor="let item of asset;"
+    [ngClass]="['item__type--' + item.type, 'is-object-' + isObject(item), 'is-opened-' + item.isOpened]"
+    class="item"
+  >
+
+    <div
+      class="item__title"
+      (click)="clickHandle(item)">
+      <div
+        class="toggler"
+        *ngIf="isObject(item)"></div>
+
+      <span class="item__key">{{item.key}}</span><span class="item__dot">:</span>
+
+      <span
+        class="item__value"
+        *ngIf="!item.isOpened"
+        [innerHTML]="item.title"></span>
+    </div>
+
+    <div
+      class="inner-item"
+      *ngIf="isObject(item)"
+      [hidden]="!item.isOpened">
+      <t-json-viewer [json]="item.value"></t-json-viewer>
+    </div>
+
+  </div>
+
+</div>

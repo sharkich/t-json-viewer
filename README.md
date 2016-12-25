@@ -34,7 +34,7 @@ export class AppModule { }
  Takes an input `[json]` that can be data bound to any object.
 
 ```js
-import {PrettyJsonComponent} from 'angular2-prettyjson';
+// import {TJsonViewerComponent} from 't-json-viewer';
 
 @Component({
   ...,

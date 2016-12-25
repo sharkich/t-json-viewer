@@ -31,9 +31,7 @@ export class AppModule { }
 
 ### Component
 
- Creates a `pre` element into which the Pretty Json pipe'd object is dumped as HTML. Takes care of styling.
-
- Takes an input `[obj]` that can be data bound to any object.
+ Takes an input `[json]` that can be data bound to any object.
 
 ```js
 import {PrettyJsonComponent} from 'angular2-prettyjson';
@@ -56,9 +54,5 @@ import {PrettyJsonComponent} from 'angular2-prettyjson';
 
 outputs
 
-![Pretty json with syntax highlight](https://cloud.githubusercontent.com/assets/487758/15599410/a68103f4-2415-11e6-8c5e-d86c22abd72b.png)
+```TODO```
 
-## Changelog
-
-1. Export module, both pipes and the component at the top level of the module
-1. Update README

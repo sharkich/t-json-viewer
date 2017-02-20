@@ -43,7 +43,7 @@ export class TJsonViewerComponent implements OnInit {
    * @param {string|any} key
    * @param {any} value
    */
-  private createItem(key, value): Item {
+  private createItem(key: any, value: any): Item {
     let item: Item = {
       key: key || '""', // original key or empty string
       value: value, // original value

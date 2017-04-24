@@ -23,8 +23,14 @@ export class TJsonViewerComponent implements OnInit {
   private asset: Array<Item> = [];
 
   constructor() { }
+  
+  ngOnInit(){
 
-  ngOnInit() {
+  }
+  ngOnChanges()  {
+    // Clear asset on input change
+    this.asset=[];
+
     // Do nothing without data
     if (!_.isObject(this.json) && !_.isArray(this.json)) {
       return;
@@ -43,7 +49,7 @@ export class TJsonViewerComponent implements OnInit {
    * @param {string|any} key
    * @param {any} value
    */
-  private createItem(key: any, value: any): Item {
+  private createItem(key, value): Item {
     let item: Item = {
       key: key || '""', // original key or empty string
       value: value, // original value

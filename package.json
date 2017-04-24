@@ -27,7 +27,7 @@
   },
   "dependencies": {
     "@angular/core": "^2.3.1",
-    "@types/lodash": "^4.14.44",
+    "@types/lodash": "ts2.0",
     "lodash": "^4.17.3",
     "rxjs": "^5.0.1"
   },

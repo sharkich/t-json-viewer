@@ -20,7 +20,7 @@ export class TJsonViewerComponent implements OnInit {
   @Input()
   json: Array<any>|Object|any;
 
-  private asset: Array<Item> = [];
+  public asset: Array<Item> = [];
 
   constructor() { }
 

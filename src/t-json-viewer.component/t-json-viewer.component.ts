@@ -1,5 +1,8 @@
 import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
 
+
+
+
 interface Item {
   key: string;
   value: any;
@@ -14,22 +17,17 @@ interface Item {
   styleUrls: ['./t-json-viewer.component.css'],
   encapsulation: ViewEncapsulation.None
 })
-export class TJsonViewerComponent implements OnInit {
+export class TJsonViewerComponent implements OnChanges {
 
   @Input()
   json: Array<any> | Object | any;
 
-  private asset: Array<Item> = [];
+  public asset: Array<Item> = [];
 
   constructor() { }
 
-  ngOnInit() {
 
-  }
   ngOnChanges() {
-    // Clear asset on input change
-    this.asset = [];
-
     // Do nothing without data
     if (typeof (this.json) != 'object' && !Array.isArray(this.json)) {
       return;

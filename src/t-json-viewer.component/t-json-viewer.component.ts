@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, ViewEncapsulation } from '@angular/core';
+import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
 
 interface Item {
   key: string;
@@ -17,21 +17,21 @@ interface Item {
 export class TJsonViewerComponent implements OnInit {
 
   @Input()
-  json: Array<any>|Object|any;
+  json: Array<any> | Object | any;
 
   private asset: Array<Item> = [];
 
   constructor() { }
 
-  ngOnInit(){
+  ngOnInit() {
 
   }
-  ngOnChanges()  {
+  ngOnChanges() {
     // Clear asset on input change
-    this.asset=[];
+    this.asset = [];
 
     // Do nothing without data
-    if (typeof(this.json)!='object' && !Array.isArray(this.json)) {
+    if (typeof (this.json) != 'object' && !Array.isArray(this.json)) {
       return;
     }
 
@@ -48,7 +48,7 @@ export class TJsonViewerComponent implements OnInit {
    * @param {string|any} key
    * @param {any} value
    */
-  private createItem(key, value): Item {
+  private createItem(key: any, value: any): Item {
     let item: Item = {
       key: key || '""', // original key or empty string
       value: value, // original value
@@ -57,16 +57,16 @@ export class TJsonViewerComponent implements OnInit {
       isOpened: false // closed by default
     };
 
-    if (typeof(item.value)=='string') {
+    if (typeof (item.value) == 'string') {
       item.type = 'string';
       item.title = `"${item.value}"`;
     }
 
-    else if (typeof(item.value)=='number') {
+    else if (typeof (item.value) == 'number') {
       item.type = 'number';
     }
 
-    else if (typeof(item.value)=='boolean') {
+    else if (typeof (item.value) == 'boolean') {
       item.type = 'boolean';
     }
 
@@ -74,7 +74,7 @@ export class TJsonViewerComponent implements OnInit {
       item.type = 'date';
     }
 
-    else if (typeof(item.value)=='function') {
+    else if (typeof (item.value) == 'function') {
       item.type = 'function';
     }
 
@@ -83,7 +83,7 @@ export class TJsonViewerComponent implements OnInit {
       item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
     }
 
-    else if (typeof(item.value)=='object') {
+    else if (typeof (item.value) == 'object') {
       item.type = 'object';
       item.title = `Object ${JSON.stringify(item.value)}`;
     }

@@ -1,5 +1,7 @@
 import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
-import * as _ from 'lodash';
+
+
+
 
 interface Item {
   key: string;
@@ -18,15 +20,16 @@ interface Item {
 export class TJsonViewerComponent implements OnChanges {
 
   @Input()
-  json: Array<any>|Object|any;
+  json: Array<any> | Object | any;
 
   public asset: Array<Item> = [];
 
   constructor() { }
 
+
   ngOnChanges() {
     // Do nothing without data
-    if (!_.isObject(this.json) && !_.isArray(this.json)) {
+    if (typeof (this.json) != 'object' && !Array.isArray(this.json)) {
       return;
     }
 
@@ -52,33 +55,33 @@ export class TJsonViewerComponent implements OnChanges {
       isOpened: false // closed by default
     };
 
-    if (_.isString(item.value)) {
+    if (typeof (item.value) == 'string') {
       item.type = 'string';
       item.title = `"${item.value}"`;
     }
 
-    else if (_.isNumber(item.value)) {
+    else if (typeof (item.value) == 'number') {
       item.type = 'number';
     }
 
-    else if (_.isBoolean(item.value)) {
+    else if (typeof (item.value) == 'boolean') {
       item.type = 'boolean';
     }
 
-    else if (_.isDate(item.value)) {
+    else if (item.value instanceof Date) {
       item.type = 'date';
     }
 
-    else if (_.isFunction(item.value)) {
+    else if (typeof (item.value) == 'function') {
       item.type = 'function';
     }
 
-    else if (_.isArray(item.value)) {
+    else if (Array.isArray(item.value)) {
       item.type = 'array';
       item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
     }
 
-    else if (_.isObject(item.value)) {
+    else if (typeof (item.value) == 'object') {
       item.type = 'object';
       item.title = `Object ${JSON.stringify(item.value)}`;
     }

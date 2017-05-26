@@ -23,8 +23,7 @@
 
     <div
       class="inner-item"
-      *ngIf="isObject(item)"
-      [hidden]="!item.isOpened">
+      *ngIf="isObject(item) && item.isOpened">
       <t-json-viewer [json]="item.value"></t-json-viewer>
     </div>
 

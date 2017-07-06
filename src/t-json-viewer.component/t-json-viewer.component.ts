@@ -1,3 +1,5 @@
+/* tslint:disable */
+
 import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
 
 interface Item {

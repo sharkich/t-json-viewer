@@ -1,6 +1,6 @@
 {
   "name": "t-json-viewer",
-  "version": "1.1.5",
+  "version": "1.1.6",
   "license": "MIT",
   "description": "Angular 2 component for objects debug (Collapsible JSON in HTML like in Chrome DevTools)",
   "main": "index.ts",
@@ -27,10 +27,10 @@
   },
   "dependencies": {
     "@angular/core": "^2.0.0 || ^4.0.0",
-    "@angular/platform-browser": "^4.2.5"
+    "@angular/platform-browser": "^4.0.0"
   },
   "devDependencies": {
     "tslint": "^5.5.0",
-    "typescript": "~2.2.2"
+    "typescript": "~2.0.0"
   }
 }

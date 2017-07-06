@@ -17,14 +17,12 @@
 
       <span
         class="item__value"
-        *ngIf="!item.isOpened"
-        [innerHTML]="item.title"></span>
+        *ngIf="!item.isOpened">{{item.title}}</span>
     </div>
 
     <div
       class="inner-item"
-      *ngIf="isObject(item)"
-      [hidden]="!item.isOpened">
+      *ngIf="item.isOpened && isObject(item)">
       <t-json-viewer [json]="item.value"></t-json-viewer>
     </div>
 

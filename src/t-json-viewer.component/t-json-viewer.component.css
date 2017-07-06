@@ -2,7 +2,8 @@
   font-family: monospace;
   font-size: 1em;
   width: 100%;
-  overflow: scroll;
+  height:100%;
+  overflow:auto;
 }
 
 /* Item */

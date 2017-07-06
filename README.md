@@ -1,7 +1,7 @@
 # 
 
 
-# Angular 2 JSON Viewer Component `t-json-viewer` v1.0.3
+# Angular 2 JSON Viewer Component `t-json-viewer` v1.2.0
 
 Angular 2 component for objects debug. Collapsible JSON in HTML with syntax highlight like Chrome DevTools http://temich.in.ua/t-json-viewer/
 
@@ -56,6 +56,6 @@ export class AppModule { }
 
 
 ### Outputs
-![Angular 2 Pretty JSON with syntax highlight](http://temich.in.ua/t-json-viewer/t-json-viewer.png)
+![Angular 2 Pretty JSON with syntax highlight](http://temich.in.ua/-i/t-json-viewer.png)
 
 

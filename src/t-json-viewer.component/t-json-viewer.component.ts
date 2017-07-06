@@ -54,40 +54,24 @@ export class TJsonViewerComponent implements OnChanges {
     if (typeof (item.value) === 'string') {
       item.type = 'string';
       item.title = `"${item.value}"`;
-    }
-
-    else if (typeof (item.value) === 'number') {
+    } else if (typeof (item.value) === 'number') {
       item.type = 'number';
-    }
-
-    else if (typeof (item.value) === 'boolean') {
+    } else if (typeof (item.value) === 'boolean') {
       item.type = 'boolean';
-    }
-
-    else if (item.value instanceof Date) {
+    } else if (item.value instanceof Date) {
       item.type = 'date';
-    }
-
-    else if (typeof (item.value) === 'function') {
+    } else if (typeof (item.value) === 'function') {
       item.type = 'function';
-    }
-
-    else if (Array.isArray(item.value)) {
+    } else if (Array.isArray(item.value)) {
       item.type = 'array';
       item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
-    }
-
-    else if (typeof (item.value) === 'object') {
+    } else if (typeof (item.value) === 'object') {
       item.type = 'object';
       item.title = `Object ${JSON.stringify(item.value)}`;
-    }
-
-    else if (item.value === null) {
+    } else if (item.value === null) {
       item.type = 'null';
       item.title = 'null'
-    }
-
-    else if (item.value === undefined) {
+    } else if (item.value === undefined) {
       item.type = 'undefined';
       item.title = 'undefined'
     }

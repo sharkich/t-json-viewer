@@ -23,7 +23,6 @@ export class TJsonViewerComponent implements OnChanges {
 
   constructor() { }
 
-
   ngOnChanges() {
     // Do nothing without data
     if (typeof (this.json) !== 'object' && !Array.isArray(this.json)) {

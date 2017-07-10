@@ -1,11 +1,8 @@
 import {NgModule} from '@angular/core';
-import {BrowserModule} from '@angular/platform-browser';
 import {TJsonViewerComponent} from './t-json-viewer.component/t-json-viewer.component';
 
 @NgModule({
-  imports: [
-    BrowserModule
-  ],
+  imports: [],
   declarations: [
     TJsonViewerComponent
   ],

@@ -31,6 +31,9 @@ export class TJsonViewerComponent implements OnChanges {
       return;
     }
 
+    // Make the asset array empty again
+    this.asset = [];
+
     /**
      * Convert json to array of items
      */

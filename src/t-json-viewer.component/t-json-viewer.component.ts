@@ -31,6 +31,9 @@ export class TJsonViewerComponent implements OnChanges {
       return;
     }
 
+    // Make the asset array empty again
+    this.asset = [];
+
     /**
      * Convert json to array of items
      */
@@ -67,12 +70,12 @@ export class TJsonViewerComponent implements OnChanges {
     } else if (Array.isArray(item.value)) {
       item.type = 'array';
       item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
-    } else if (typeof (item.value) === 'object') {
-      item.type = 'object';
-      item.title = `Object ${JSON.stringify(item.value)}`;
     } else if (item.value === null) {
       item.type = 'null';
       item.title = 'null'
+    } else if (typeof (item.value) === 'object') {
+      item.type = 'object';
+      item.title = `Object ${JSON.stringify(item.value)}`;
     } else if (item.value === undefined) {
       item.type = 'undefined';
       item.title = 'undefined'

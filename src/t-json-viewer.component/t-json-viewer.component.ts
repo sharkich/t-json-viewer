@@ -20,6 +20,9 @@ export class TJsonViewerComponent implements OnChanges {
 
   @Input()
   json: Array<any> | Object | any;
+  
+  @Input()
+  maxCollapsedLength: number;
 
   public asset: Array<Item> = [];
 
@@ -69,13 +72,13 @@ export class TJsonViewerComponent implements OnChanges {
       item.type = 'function';
     } else if (Array.isArray(item.value)) {
       item.type = 'array';
-      item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
+      item.title = `Array[${item.value.length}] ${this.setMaxLength(JSON.stringify(item.value))}`;
     } else if (item.value === null) {
       item.type = 'null';
       item.title = 'null'
     } else if (typeof (item.value) === 'object') {
       item.type = 'object';
-      item.title = `Object ${JSON.stringify(item.value)}`;
+      item.title = `Object ${this.setMaxLength(JSON.stringify(item.value))}`;
     } else if (item.value === undefined) {
       item.type = 'undefined';
       item.title = 'undefined'
@@ -106,4 +109,14 @@ export class TJsonViewerComponent implements OnChanges {
     item.isOpened = !item.isOpened;
   }
 
+  /**
+   * Trims the collapsed string to the asked length
+   * @param str parsed json item
+   * @returns {string}
+   */
+  setMaxLength(str) {
+    return this.maxCollapsedLength && str.length > this.maxCollapsedLength ?
+      str.substring(0, this.maxCollapsedLength) + '...' :
+      str;
+  }
 }

@@ -1,6 +1,6 @@
 /* tslint:disable */
 
-import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
+import {Component, Input, ViewEncapsulation, OnInit} from '@angular/core';
 
 interface Item {
   key: string;
@@ -30,9 +30,6 @@ export class TJsonViewerComponent implements OnChanges {
     if (typeof (this.json) !== 'object' && !Array.isArray(this.json)) {
       return;
     }
-
-    // Make the asset array empty again
-    this.asset = [];
 
     /**
      * Convert json to array of items

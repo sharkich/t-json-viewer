@@ -1,8 +1,8 @@
 /* tslint:disable */
 
-import {Component, Input, ViewEncapsulation, OnChanges} from '@angular/core';
+import {Component, Input, OnChanges} from '@angular/core';
 
-interface Item {
+export interface Item {
   key: string;
   value: any;
   title: string;
@@ -11,10 +11,10 @@ interface Item {
 }
 
 @Component({
+  moduleId: module.id,
   selector: 't-json-viewer',
   templateUrl: './t-json-viewer.component.html',
-  styleUrls: ['./t-json-viewer.component.css'],
-  encapsulation: ViewEncapsulation.None
+  styleUrls: ['./t-json-viewer.component.css']
 })
 export class TJsonViewerComponent implements OnChanges {
 

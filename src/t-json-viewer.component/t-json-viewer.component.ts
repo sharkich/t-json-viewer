@@ -11,7 +11,6 @@ export interface Item {
 }
 
 @Component({
-  moduleId: module.id,
   selector: 't-json-viewer',
   templateUrl: './t-json-viewer.component.html',
   styleUrls: ['./t-json-viewer.component.css']
@@ -62,29 +61,38 @@ export class TJsonViewerComponent implements OnChanges {
     if (typeof (item.value) === 'string') {
       item.type = 'string';
       item.title = `"${item.value}"`;
+
     } else if (typeof (item.value) === 'number') {
       item.type = 'number';
+
     } else if (typeof (item.value) === 'boolean') {
       item.type = 'boolean';
+
     } else if (item.value instanceof Date) {
       item.type = 'date';
+
     } else if (typeof (item.value) === 'function') {
       item.type = 'function';
+
     } else if (Array.isArray(item.value)) {
       item.type = 'array';
-      item.title = `Array[${item.value.length}] ${this.setMaxLength(JSON.stringify(item.value))}`;
+      item.title = `Array[${item.value.length}] ${JSON.stringify(item.value)}`;
+
     } else if (item.value === null) {
       item.type = 'null';
       item.title = 'null'
+
     } else if (typeof (item.value) === 'object') {
       item.type = 'object';
-      item.title = `Object ${this.setMaxLength(JSON.stringify(item.value))}`;
+      item.title = `Object ${JSON.stringify(item.value)}`;
+
     } else if (item.value === undefined) {
       item.type = 'undefined';
       item.title = 'undefined'
     }
 
-    item.title = '' + item.title; // defined type or 'undefined'
+    item.title = this.setMaxLength('' + item.title); // defined type or 'undefined' + reduce length
+
 
     return item;
   }
@@ -114,9 +122,10 @@ export class TJsonViewerComponent implements OnChanges {
    * @param str parsed json item
    * @returns {string}
    */
-  setMaxLength(str) {
-    return this.maxCollapsedLength && str.length > this.maxCollapsedLength ?
-      str.substring(0, this.maxCollapsedLength) + '...' :
-      str;
+  setMaxLength(str: string) {
+    if (!this.maxCollapsedLength || str.length < this.maxCollapsedLength) {
+      return str;
+    }
+    return str.substring(0, this.maxCollapsedLength) + '...';
   }
 }

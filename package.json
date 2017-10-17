@@ -3,7 +3,7 @@
   "version": "1.2.1",
   "license": "BSD 3-clause",
   "description": "Angular 2 component for objects debug (Collapsible JSON in HTML like in Chrome DevTools)",
-  "main": "index.ts",
+  "main": "dist/index.d.ts",
   "keywords": [
     "angular2",
     "@angular",
@@ -18,5 +18,19 @@
   "bugs": {
     "url": "https://github.com/temich666/t-json-viewer/issues",
     "email": "a@temich.in.ua"
-  }
+  },
+  "devDependencies": {
+    "@angular/common": "^4.4.5",
+    "@angular/core": "^4.4.5",
+    "@types/node": "^8.0.34",
+    "copyfiles": "^1.2.0"
+  },
+  "scripts": {
+    "build": "tsc",
+    "build-release": "tsc --outDir dist/ --sourceMap false && copyfiles src/**/*.html src/**/*.css dist/"
+  },
+  "files": [
+    "LICENCE",
+    "dist/"
+  ]
 }

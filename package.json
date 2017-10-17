@@ -1,6 +1,6 @@
 {
   "name": "t-json-viewer",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "license": "MIT",
   "description": "Angular component for objects debug (Collapsible JSON in HTML like in Chrome DevTools)",
   "main": "dist/index.d.ts",

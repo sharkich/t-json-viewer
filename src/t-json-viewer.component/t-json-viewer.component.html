@@ -23,7 +23,7 @@
     <div
       class="inner-item"
       *ngIf="item.isOpened && isObject(item)">
-      <t-json-viewer [json]="item.value"></t-json-viewer>
+      <t-json-viewer [json]="item.value" [maxCollapsedLength]="maxCollapsedLength"></t-json-viewer>
     </div>
 
   </div>

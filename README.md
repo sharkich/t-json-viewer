@@ -52,7 +52,8 @@ export class AppModule { }
   }
 ```
 ## Examples
-[Examples collapse pretty JSON with syntax highlight](http://temich.in.ua/t-json-viewer/)
+Example: [http://temich.in.ua/t-json-viewer/](http://temich.in.ua/t-json-viewer/)
+Example source: [https://github.com/temich666/t-json-viewer-example](https://github.com/temich666/t-json-viewer-example)
 
 
 ### Outputs

@@ -3,6 +3,7 @@
 # compiled output
 /dist
 /tmp
+*.d.ts
 *.js
 *.map
 

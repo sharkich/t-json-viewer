@@ -1,9 +1,9 @@
 {
   "name": "t-json-viewer",
-  "version": "1.2.4",
+  "version": "1.2.5",
   "license": "MIT",
   "description": "Angular component for objects debug (Collapsible JSON in HTML like in Chrome DevTools)",
-  "main": "dist/index.d.ts",
+  "main": "index.ts",
   "keywords": [
     "angular2",
     "angular4",
@@ -24,17 +24,6 @@
     "@angular/common": "^4.4.5",
     "@angular/core": "^4.4.5",
     "@types/node": "^8.0.34",
-    "copyfiles": "^1.2.0"
-  },
-  "scripts": {
-    "build": "tsc",
-    "build-release": "tsc --outDir dist/ --sourceMap false && copyfiles src/**/*.html src/**/*.css dist/"
-  },
-  "files": [
-    "LICENCE",
-    "dist/"
-  ],
-  "dependencies": {
     "rxjs": "^5.4.3",
     "zone.js": "^0.8.18"
   }

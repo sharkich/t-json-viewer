@@ -9,6 +9,7 @@ export interface Item {
 export declare class TJsonViewerComponent implements OnChanges {
     json: Array<any> | Object | any;
     maxCollapsedLength: number;
+    expandAll: false;
     asset: Array<Item>;
     constructor();
     ngOnChanges(): void;

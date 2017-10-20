@@ -23,6 +23,9 @@ export class TJsonViewerComponent implements OnChanges {
   @Input()
   maxCollapsedLength: number;
 
+  @Input()
+  expandAll: false;
+
   public asset: Array<Item> = [];
 
   constructor() { }
@@ -42,6 +45,12 @@ export class TJsonViewerComponent implements OnChanges {
     Object.keys(this.json).forEach((key) => {
       this.asset.push(this.createItem(key, this.json[key]));
     });
+
+    if (this.expandAll) {
+      this.asset.forEach(element => {
+        this.clickHandle(element);
+      });
+    }
   }
 
   /**

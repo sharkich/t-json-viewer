@@ -9,6 +9,7 @@
 /* Item */
 
 .item {
+  position: relative;
   border: 1px solid #fff;
   padding: 1px;
   margin: 1px 1px 1px 12px;
